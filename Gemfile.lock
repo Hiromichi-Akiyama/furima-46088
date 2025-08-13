@@ -122,6 +122,7 @@ GEM
       railties (>= 6.1.0)
     faker (3.5.2)
       i18n (>= 1.8.11, < 2)
+    gimei (1.5.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.7)
@@ -324,6 +325,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
+  gimei
   importmap-rails
   jbuilder
   mysql2 (~> 0.5)

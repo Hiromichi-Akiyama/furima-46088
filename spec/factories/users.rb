@@ -2,12 +2,14 @@ FactoryBot.define do
   factory :user do
     nickname              { Faker::Name.initials(number: 2) }
     email                 { Faker::Internet.email }
-    password              { Faker::Internet.password(min_length: 6) }
+    # パスワードは英数字混合を生成するように修正
+    password              { '1a' + Faker::Internet.password(min_length: 6) }
     password_confirmation { password }
-    last_name { Faker::Name.last_name }
-    first_name { Faker::Name.first_name }
-    last_name_kana { Faker::Name.last_name.kana }
-    first_name_kana { Faker::Name.first_name.kana }
+    # gimei を使って日本の名前とフリガナを生成
+    last_name             { Gimei.last.kanji }
+    first_name            { Gimei.first.kanji }
+    last_name_kana        { Gimei.last.katakana }
+    first_name_kana       { Gimei.first.katakana }
     birth_date { Faker::Date.birthday(min_age: 18, max_age: 65) }
   end
 end
