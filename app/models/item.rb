@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   belongs_to :shipping_day
 
   belongs_to :user
-  # has_one :order # orderテーブル作成後にコメントを外します
+  has_one :order
 
   # --- presence: true のバリデーション ---
   with_options presence: true do
