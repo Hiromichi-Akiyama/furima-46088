@@ -53,6 +53,13 @@ Rails.application.configure do
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
 
+  # ジョブは実行しない（enqueue だけ）
+  config.active_job.queue_adapter = :test
+
+  # Active Storage のバックグラウンド処理を止める（Rails 7.0+）
+  config.active_storage.queues.analysis = nil
+  config.active_storage.queues.purge    = nil
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
